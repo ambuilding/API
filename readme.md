@@ -4,7 +4,7 @@
 
 - Solving the issue of linking the API output to the structure of the database tables.(transformations)
 
-- Transformation classes
+- Single Responsibility Priniciple: Extract the transformation process into its own set of classes.
 
 ### Fractal
 
