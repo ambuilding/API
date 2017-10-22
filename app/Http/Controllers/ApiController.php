@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Response;
-//use Illuminate\Http\Response as IlluminateResponse;
+use Illuminate\Http\Response as IlluminateResponse;
 
 class ApiController extends Controller
 {
@@ -23,12 +23,17 @@ class ApiController extends Controller
 
 	public function respondNotFound($message = 'Not Found!')
 	{
-		return $this->setStatusCode(404)->respondWithError($message);
+		return $this->setStatusCode(IlluminateResponse::HTTP_NOT_FOUND)->respondWithError($message);
 	}
 
 	public function respondInternalError($message = 'Internal Error!') // return $this->respondInternalError();
 	{
-		return $this->setStatusCode(500)->respondWithError($message);
+		return $this->setStatusCode(IlluminateResponse::HTTP_INTERNAL_SERVER_ERROR)->respondWithError($message);
+	}
+
+	public function respondCreated($message)
+	{
+		return $this->setStatusCode(IlluminateResponse::HTTP_CREATED)->respond($message);
 	}
 
 	public function respond($data, $headers = [])

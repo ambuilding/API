@@ -6,6 +6,8 @@
 
 - Solving the issue of linking the API output to the structure of the database tables.(transformations)
 
+- Authentication, limit access to our API. The simplest solution: HTTP basic authentication (with SSL).
+
 - Single Responsibility Priniciple: Extract the transformation process into its own set of classes.
 
 ### Fractal
