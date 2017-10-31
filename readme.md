@@ -10,5 +10,9 @@
 
 - Single Responsibility Priniciple: Extract the transformation process into its own set of classes.
 
+- Associate any number of tags with a given lesson. Pivot tables and tags. (many-to-many relationships)
+
+- Paginate the API results.
+
 ### Fractal
 

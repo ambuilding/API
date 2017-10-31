@@ -14,7 +14,7 @@ class LessonController extends ApiController
     function __construct(LessonTransformer $lessonTransformer)
     {
         $this->lessonTransformer = $lessonTransformer;
-        $this->middleware('auth')->except(['index', 'show']);
+        //$this->middleware('auth')->except(['index', 'show']);
     }
     /**
      * Display a listing of the resource.
@@ -23,10 +23,12 @@ class LessonController extends ApiController
      */
     public function index()
     {
-        $lessons = Lesson::all();
+        $limit = request()->input('limit', 3);
+        $lessons = Lesson::paginate($limit);
+        //dd(get_class_methods($lessons));
 
-        return $this->respond([
-            'data' => $this->lessonTransformer->transformCollection($lessons->all()) // toArray()
+        return $this->respondWithPagination($lessons, [
+            'data' => $this->lessonTransformer->transformCollection($lessons->all())
         ]);
     }
 
