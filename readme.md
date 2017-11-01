@@ -16,5 +16,7 @@
 
 - API rate limiting, limit the numbers of allowed requests.
 
+- Token-based authentication(API) / Traditional session-based setup(Web)
+
 ### Fractal
 
