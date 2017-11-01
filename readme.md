@@ -14,5 +14,7 @@
 
 - Paginate the API results.
 
+- API rate limiting, limit the numbers of allowed requests.
+
 ### Fractal
 
