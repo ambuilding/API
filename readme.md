@@ -14,7 +14,7 @@
 
 - Paginate the API results.
 
-- API rate limiting, limit the numbers of allowed requests.
+- API rate limiting. Limit the numbers of allowed requests, via a midddleware - throttle.
 
 - Token-based authentication(API) / Traditional session-based setup(Web)
 

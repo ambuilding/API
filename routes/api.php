@@ -18,8 +18,10 @@ Route::get('search/{term}', function($term)
 	return [
 		'result' => $term
 	];
-})->middleware('throttle:3'); // 60 requests per minute
+})->middleware('throttle:30'); // 60 requests per minute
 // middleware('throttle:30,5') 30 requests in 5 mins
+// curl -I http://127.0.0.1:8000/api/search/dogs
+
 
 Route::middleware('auth:api')->get('/', function ()
 {
